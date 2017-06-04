@@ -28,7 +28,7 @@ namespace LayoutWebDemo.Controllers
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
-
+            //当使用ActionName特性时，就需要设置PartialView返回的存在视图名称
             return PartialView("Contact");
         }
 
