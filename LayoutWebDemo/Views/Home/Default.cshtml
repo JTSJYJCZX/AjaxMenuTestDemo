@@ -15,14 +15,15 @@
     @Scripts.Render("~/bundles/bootstrap")
     <script type="text/javascript">
         $(function () {
-            $('#displayArea').load('@Href("~/Home/Index")');
+            //$('#displayArea').load('@Href("~/Home/Index")');//初始化加载的子页面
             $('.actionLink').click(function () {
                 var url = $(this).data("url");
                 console.log('访问路径:' + url);
                 $('#displayArea').load(url);
             });
+            $($('.actionLink').get(0)).trigger("click");//初始化加载的子页面
         });
-        $('')
+       
     </script>
 </head>
 <body>
