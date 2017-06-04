@@ -6,19 +6,25 @@ using System.Web.Mvc;
 
 namespace LayoutWebDemo.Controllers
 {
+   
     public class HomeController : Controller
     {
+        [OutputCache(CacheProfile = "IndexProfile")]
         public ActionResult Default()
         {
+            Response.Cache.SetOmitVaryStar(true);
             return View();
         }
+        [OutputCache(CacheProfile = "IndexProfile")]
         public ActionResult Index()
         {
+            Response.Cache.SetOmitVaryStar(true);
             return PartialView();
         }
-
+        [OutputCache(CacheProfile = "IndexProfile")]
         public ActionResult About()
         {
+            Response.Cache.SetOmitVaryStar(true);
             ViewBag.Message = "Your application description page.";
 
             return PartialView();
